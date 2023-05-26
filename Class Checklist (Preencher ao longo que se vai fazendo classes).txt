@@ -1,0 +1,24 @@
+->Pacote Domain : X
+    Docnature : X
+    Availability : X
+    Document : X
+    UniqueIdentifierFactory : X
+    ICodifierStrategy : X
+    AbstractCodifierStrategy : X
+    IdentityCodifierStrategy : X
+    Round13CodifierStrategy  : X
+    Round13CodifierStrategy  : X
+    VigenereCodifierStrategy : X
+    Alert : X
+    AgentUnavailableAlert : X
+    AgentInfoSearchedAlert : X
+    MissionInfoSearchedAlert : X
+    Agent : X
+    Mission : X
+    User : X
+    CodifierFactory : X
+    UserCatalog : X
+    OCT : X
+
+
+-> Pacote domain.stubs : X
