@@ -83,3 +83,13 @@ public class Document implements Cloneable {
         }
     }
 }
+
+public class UniqueIdentifierFactory(){
+
+    public IndicatorFactory getInstance(){
+
+    }
+    public String getIdentifier(DocNature dn){
+
+    }
+}
