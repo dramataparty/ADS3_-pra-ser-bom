@@ -13,7 +13,9 @@ public enum DocNature {
     }
 }
 public enum Availability {
-    TO_AGENT("ToAg"),
-    FROM_AGENT("FrAg"),
-    INTERNAL("Intr")~
+    ARRESTED,
+    DESERTED,
+    ILL,
+    DEAD,
+    RETIRED
 }
