@@ -15,6 +15,17 @@ public enum DocNature {
 
 
 
+public enum Availability {
+    AVAILABLE,
+    ARRESTED,
+    DESERTED,
+    ILL,
+    DEAD,
+    RETIRED
+}
+
+
+
 
 public class Agent {
     private AgentState state;
@@ -49,12 +60,4 @@ public class Agent {
     public AgentState getState() {
         return state;
     }
-}
-public enum Availability {
-    AVAILABLE,
-    ARRESTED,
-    DESERTED,
-    ILL,
-    DEAD,
-    RETIRED
 }

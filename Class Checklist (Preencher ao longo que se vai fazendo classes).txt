@@ -1,6 +1,6 @@
 ->Pacote Domain : X
-    Docnature : X
-    Availability : X
+    Docnature : V
+    Availability : V
     Document : X
     UniqueIdentifierFactory : X
     ICodifierStrategy : X
