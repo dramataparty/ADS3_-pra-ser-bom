@@ -128,3 +128,18 @@ public class Mission implements Iterable<String>, PropertyChangeListener {
     }
 
     /**
+     * Retorna um iterador sobre os participantes da missão.
+     *
+     * @return Um iterador de strings.
+     */
+    @Override
+    public Iterator<String> iterator() {
+        List<String> participantCodeNames = new ArrayList<>();
+        for (Agent agent : participants) {
+            if (!agent.equals(responsibleAgent)) {
+                participantCodeNames.add(agent.getCodeName());
+            }
+        }
+        return participantCodeNames.iterator();
+    }
+}

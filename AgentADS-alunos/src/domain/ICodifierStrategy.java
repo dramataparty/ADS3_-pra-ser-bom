@@ -5,7 +5,7 @@ import java.util.List;
  * Implementation of the ICodifierStrategy interface that performs a simple
  * character substitution encoding.
  */
-public class MyCodifierStrategy implements ICodifierStrategy {
+public class ICodifierStrategy {
     /**
      * Returns the name of the encoding strategy.
      *

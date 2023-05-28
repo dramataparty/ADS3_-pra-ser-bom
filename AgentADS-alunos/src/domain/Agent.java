@@ -78,7 +78,7 @@ class Agent {
      */
     public void becomeUnavailable(String unavail) {
         try {
-            state = Availability.valueOf(unavail);
+            state = Availability.valueOf(unavail.toUpperCase());
             String message = "Agent " + codeName + " became " + unavail;
             notifyObservers(new AgentUnavailableAlert(message));
         } catch (IllegalArgumentException e) {
@@ -104,7 +104,7 @@ class Agent {
         return state;
     }
 
-    /**
+/**
      * Retorna uma representação em forma de string do agente.
      *
      * @return A representação em string do agente.
@@ -112,5 +112,3 @@ class Agent {
     @Override
     public String toString() {
         return "Agent: " + codeName + ", State: " + state;
-    }
-}
