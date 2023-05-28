@@ -2,56 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Interface que define estratégias de codificação de documentos.
- */
-public interface ICodifierStrategy {
-    /**
-     * Retorna o nome da estratégia de codificação (ou codificador).
-     *
-     * @return O nome da estratégia de codificação.
-     */
-    String getName();
-
-    /**
-     * Codifica o texto usando a chave fornecida.
-     *
-     * @param key  A chave usada para codificar o texto.
-     * @param text O texto a ser codificado.
-     * @return O texto codificado.
-     */
-    Iterable<String> code(String key, Iterable<String> text);
-
-    /**
-     * Decodifica o texto usando a chave fornecida.
-     *
-     * @param key  A chave usada para decodificar o texto.
-     * @param text O texto codificado a ser decodificado.
-     * @return O texto decodificado.
-     */
-    Iterable<String> decode(String key, Iterable<String> text);
-}
-
-/**
- * Implementação da interface ICodifierStrategy que realiza uma
- * codificação simples de substituição de caracteres.
+ * Implementation of the ICodifierStrategy interface that performs a simple
+ * character substitution encoding.
  */
 public class MyCodifierStrategy implements ICodifierStrategy {
     /**
-     * Retorna o nome da estratégia de codificação.
+     * Returns the name of the encoding strategy.
      *
-     * @return O nome da estratégia de codificação.
+     * @return The name of the encoding strategy.
      */
+
     @Override
     public String getName() {
         return "My Codifier Strategy";
     }
 
     /**
-     * Codifica o texto usando uma chave de substituição simples.
+     * Encodes the text using a simple substitution key.
      *
-     * @param key  A chave usada para codificar o texto.
-     * @param text O texto a ser codificado.
-     * @return O texto codificado.
+     * @param key  The key used to encode the text.
+     * @param text The text to be encoded.
+     * @return The encoded text.
      */
     @Override
     public Iterable<String> code(String key, Iterable<String> text) {
@@ -63,11 +34,11 @@ public class MyCodifierStrategy implements ICodifierStrategy {
     }
 
     /**
-     * Decodifica o texto usando uma chave de substituição simples.
+     * Decodes the text using a simple substitution key.
      *
-     * @param key  A chave usada para decodificar o texto.
-     * @param text O texto codificado a ser decodificado.
-     * @return O texto decodificado.
+     * @param key  The key used to decode the text.
+     * @param text The encoded text to be decoded.
+     * @return The decoded text.
      */
     @Override
     public Iterable<String> decode(String key, Iterable<String> text) {

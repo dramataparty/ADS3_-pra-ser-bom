@@ -23,6 +23,12 @@ public class CodifierFactory {
         String separator = System.getProperty("file.separator");
         File codifiersFolder = new File(System.getProperty("user.dir") + separator + "bin" +
                 separator + "domain" + separator + "codifiers");
+
+        // Ensure that the codifiers folder exists and is a directory
+        if (!codifiersFolder.exists() || !codifiersFolder.isDirectory()) {
+            throw new IllegalStateException("Codifiers folder does not exist or is not a directory.");
+        }
+
         File[] classes = codifiersFolder.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
                 return name.endsWith(".class");
@@ -31,14 +37,17 @@ public class CodifierFactory {
 
         for (File className : classes) {
             try {
-                String s = className.getName();
-                Class<?> codifierClass = Class.forName("domain.codifiers." + s.substring(0, s.lastIndexOf('.')));
-                if (ICodifier.class.isAssignableFrom(codifierClass) && !className.equals("Dummy")) {
+                String fileName = className.getName();
+                String codifierName = fileName.substring(0, fileName.lastIndexOf('.'));
+                Class<?> codifierClass = Class.forName("domain.codifiers." + codifierName);
+
+                if (ICodifier.class.isAssignableFrom(codifierClass) && !codifierName.equals("DummyCodifier")) {
                     ICodifier codifier = (ICodifier) codifierClass.getDeclaredConstructor().newInstance();
                     codifiers.put(codifier.getName(), codifier);
                 }
             } catch (Exception e) {
-                // Do nothing! Just ignore the class;
+                // Print or log the exception for debugging purposes
+                e.printStackTrace();
             }
         }
     }
