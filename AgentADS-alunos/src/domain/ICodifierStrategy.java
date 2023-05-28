@@ -1,22 +1,57 @@
-package domain;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Interface que define estratégias de codificação de documentos.
+ */
 public interface ICodifierStrategy {
+    /**
+     * Retorna o nome da estratégia de codificação (ou codificador).
+     *
+     * @return O nome da estratégia de codificação.
+     */
     String getName();
 
+    /**
+     * Codifica o texto usando a chave fornecida.
+     *
+     * @param key  A chave usada para codificar o texto.
+     * @param text O texto a ser codificado.
+     * @return O texto codificado.
+     */
     Iterable<String> code(String key, Iterable<String> text);
 
+    /**
+     * Decodifica o texto usando a chave fornecida.
+     *
+     * @param key  A chave usada para decodificar o texto.
+     * @param text O texto codificado a ser decodificado.
+     * @return O texto decodificado.
+     */
     Iterable<String> decode(String key, Iterable<String> text);
 }
 
+/**
+ * Implementação da interface ICodifierStrategy que realiza uma codificação simples de substituição de caracteres.
+ */
 public class MyCodifierStrategy implements ICodifierStrategy {
+    /**
+     * Retorna o nome da estratégia de codificação.
+     *
+     * @return O nome da estratégia de codificação.
+     */
     @Override
     public String getName() {
         return "My Codifier Strategy";
     }
 
+    /**
+     * Codifica o texto usando uma chave de substituição simples.
+     *
+     * @param key  A chave usada para codificar o texto.
+     * @param text O texto a ser codificado.
+     * @return O texto codificado.
+     */
     @Override
     public Iterable<String> code(String key, Iterable<String> text) {
         List<String> encodedText = new ArrayList<>();
@@ -26,6 +61,13 @@ public class MyCodifierStrategy implements ICodifierStrategy {
         return encodedText;
     }
 
+    /**
+     * Decodifica o texto usando uma chave de substituição simples.
+     *
+     * @param key  A chave usada para decodificar o texto.
+     * @param text O texto codificado a ser decodificado.
+     * @return O texto decodificado.
+     */
     @Override
     public Iterable<String> decode(String key, Iterable<String> text) {
         List<String> decodedText = new ArrayList<>();
