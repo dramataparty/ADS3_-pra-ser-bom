@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Interface que define estratégias de codificação de documentos.
  */
-public interface IdentityCodifierStrategy {
+public interface ICodifierStrategy {
     /**
      * Retorna o nome da estratégia de codificação (ou codificador).
      *
@@ -32,10 +32,10 @@ public interface IdentityCodifierStrategy {
 }
 
 /**
- * Implementação da interface IdentityCodifierStrategy que realiza uma
+ * Implementação da interface ICodifierStrategy que realiza uma
  * codificação simples de substituição de caracteres.
  */
-public class MyCodifierStrategy implements IdentityCodifierStrategy {
+public class MyCodifierStrategy implements ICodifierStrategy {
     /**
      * Retorna o nome da estratégia de codificação.
      *

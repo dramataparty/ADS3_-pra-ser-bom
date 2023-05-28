@@ -3,7 +3,7 @@
     Availability : V
     Document : V
     UniqueIdentifierFactory : V
-    IdentityCodifierStrategy : V
+    ICodifierStrategy : V
     AbstractCodifierStrategy : V
     IdentityCodifierStrategy : X
     Round13CodifierStrategy  : X

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /*
 import domain.CodifierFactory;
-import domain.IdentityCodifierStrategy;
+import domain.ICodifierStrategy;
 import domain.OCT;
 import domain.User;
 */
@@ -277,13 +277,13 @@ public class TextClient {
 	 * text.add("On the corner of the 1st with the 3rd");
 	 * text.add("at four of the afternoon");
 	 * text.add("wearing a red coat and a black hat");
-	 * IdentityCodifierStrategy coder =
+	 * ICodifierStrategy coder =
 	 * fact.getCodifier("domain.Round13CodifierStrategy");
 	 * codeAndDecode(text,coder);
 	 * }
 	 * 
 	 * private static void codeAndDecode(Iterable<String> text,
-	 * IdentityCodifierStrategy coder){
+	 * ICodifierStrategy coder){
 	 * Iterable<String> sCod = coder.code("a", text);
 	 * for(String s : sCod)
 	 * System.out.println(s);
