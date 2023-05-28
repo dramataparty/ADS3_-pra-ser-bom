@@ -1,0 +1,38 @@
+package domain;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.HashSet;
+import java.util.Set;
+
+public class User implements PropertyChangeListener {
+    private String username;
+    private Set<String> alerts;
+
+    public User(String username) {
+        this.username = username;
+        this.alerts = new HashSet<>();
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent ev) {
+        Object newValue = ev.getNewValue();
+        if (newValue instanceof AgentUnavailableAlert ||
+                newValue instanceof AgentInfoSearchedAlert ||
+                newValue instanceof MissionInfoSearchedAlert) {
+            Alert alert = (Alert) newValue;
+            alerts.add(alert.getMessage());
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("User: ").append(username).append("\n");
+        sb.append("Alerts: ").append("\n");
+        for (String alert : alerts) {
+            sb.append(alert).append("\n");
+        }
+        return sb.toString();
+    }
+}
