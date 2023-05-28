@@ -5,7 +5,7 @@
     UniqueIdentifierFactory : V
     ICodifierStrategy : V
     AbstractCodifierStrategy : V
-    IdentityCodifierStrategy : X
+    IdentityCodifierStrategy : V
     Round13CodifierStrategy  : X
     Round13CodifierStrategy  : X
     VigenereCodifierStrategy : X
