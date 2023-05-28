@@ -1,9 +1,9 @@
 ->Pacote Domain : X
     Docnature : V
     Availability : V
-    Document : X
+    Document : V
     UniqueIdentifierFactory : V
-    ICodifierStrategy : V
+    IdentityCodifierStrategy : V
     AbstractCodifierStrategy : V
     IdentityCodifierStrategy : X
     Round13CodifierStrategy  : X
@@ -18,7 +18,7 @@
     User : X
     CodifierFactory : X
     UserCatalog : X
-    OCT : X
+    OCT : V
 
 
--> Pacote domain.stubs : X
+-> Pacote domain.handlers : X

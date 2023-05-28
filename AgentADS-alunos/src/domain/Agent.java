@@ -4,7 +4,7 @@ import java.util.List;
 // Agent class
 class Agent {
     private String codeName;
-    private ICodifierStrategy codifierStrategy;
+    private IdentityCodifierStrategy codifierStrategy;
     private List<Document> documents;
     private Availability state;
 
