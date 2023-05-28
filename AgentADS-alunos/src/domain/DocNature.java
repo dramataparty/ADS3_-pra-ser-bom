@@ -3,10 +3,11 @@ package domain;
 public enum DocNature {
     TO_AGENT("ToAg"),
     FROM_AGENT("FrAg"),
-    INTERNAL("Intr")
+    INTERNAL("Intr");
+
     private final String word;
 
-    FileType(String word) {
+    DocNature(String word) {
         this.word = word;
     }
 
