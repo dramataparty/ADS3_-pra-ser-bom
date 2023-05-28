@@ -4,7 +4,7 @@
     Document : X
     UniqueIdentifierFactory : V
     ICodifierStrategy : V
-    AbstractCodifierStrategy : X
+    AbstractCodifierStrategy : V
     IdentityCodifierStrategy : X
     Round13CodifierStrategy  : X
     Round13CodifierStrategy  : X
