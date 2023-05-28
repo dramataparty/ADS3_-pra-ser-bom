@@ -8,8 +8,8 @@
     IdentityCodifierStrategy : V
     Round13CodifierStrategy  : V
     Round13CodifierStrategy  : V
-    VigenereCodifierStrategy : X
-    Alert : X
+    VigenereCodifierStrategy : V
+    Alert : V
     AgentUnavailableAlert : X
     AgentInfoSearchedAlert : X
     MissionInfoSearchedAlert : X
