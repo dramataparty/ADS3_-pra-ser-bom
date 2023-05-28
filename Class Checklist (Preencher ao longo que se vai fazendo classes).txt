@@ -2,7 +2,7 @@
     Docnature : V
     Availability : V
     Document : X
-    UniqueIdentifierFactory : X
+    UniqueIdentifierFactory : V
     ICodifierStrategy : X
     AbstractCodifierStrategy : X
     IdentityCodifierStrategy : X
