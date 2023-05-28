@@ -12,7 +12,7 @@ public class LogoutHandler implements ILogoutHandler {
 
     @Override
     public void logout(String username) {
-        User user = userCatalog.getUserByUsername(username);
+        User user = userCatalog.getUserByName(username);
         if (user != null) {
             user.setLoggedIn(false);
         }

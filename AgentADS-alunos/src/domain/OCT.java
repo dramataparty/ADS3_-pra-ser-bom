@@ -22,16 +22,16 @@ public class OCT implements IOCT {
      * Obtém as informações de um usuário pelo nome de usuário.
      *
      * @param name O nome de usuário do usuário.
-     * @return O objeto User correspondente ao nome de usuário especificado, ou null se não for encontrado.
+     * @return O objeto User correspondente ao nome de usuário especificado, ou null
+     *         se não for encontrado.
      */
     @Override
     public User getUsersInfo(String name) {
-        User user = UserCatalog.getUserByName(name);
+        User user = userCatalog.getUserByName(name);
         if (user != null) {
             return user;
         } else {
             return null;
         }
     }
-
 }
