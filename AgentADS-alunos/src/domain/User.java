@@ -5,15 +5,28 @@ import java.beans.PropertyChangeListener;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Classe que representa um utilizador.
+ */
 public class User implements PropertyChangeListener {
     private String username;
     private Set<String> alerts;
 
+    /**
+     * Construtor da classe User.
+     *
+     * @param username O nome de utilizador do utilizador.
+     */
     public User(String username) {
         this.username = username;
         this.alerts = new HashSet<>();
     }
 
+    /**
+     * Método chamado quando ocorre uma alteração em uma propriedade.
+     *
+     * @param ev O evento de alteração de propriedade.
+     */
     @Override
     public void propertyChange(PropertyChangeEvent ev) {
         Object newValue = ev.getNewValue();
@@ -25,6 +38,11 @@ public class User implements PropertyChangeListener {
         }
     }
 
+    /**
+     * Retorna uma representação em forma de string do utilizador.
+     *
+     * @return A representação em string do utilizador.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
