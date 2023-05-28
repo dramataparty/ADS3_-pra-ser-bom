@@ -1,6 +1,5 @@
 package domain;
 
-import domain.User;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,12 +34,13 @@ public class UserCatalog {
     /**
      * Obtém um usuário pelo nome de usuário.
      *
-     * @param name O nome de usuário do usuário a ser obtido.
-     * @return O usuário correspondente ao nome de usuário especificado, ou null se não for encontrado.
+     * @param username O nome de usuário do usuário a ser obtido.
+     * @return O usuário correspondente ao nome de usuário especificado, ou null se
+     *         não for encontrado.
      */
-    public User getUserByName(String name) {
+    public User getUserByName(String username) {
         for (User user : users) {
-            if (user.getName().equals(name)) {
+            if (user.getName().equals(username)) {
                 return user;
             }
         }
