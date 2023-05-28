@@ -1,8 +1,19 @@
 package domain;
 
-public class VignéreCodifierStrategy {
-    private static final int ALPHABET_SIZE = 26;
+/**
+ * A classe VigenereCodifierStrategy implementa a estratégia de codificação e decodificação usando o cifrador Vignére.
+ * Essa estratégia utiliza uma chave para codificar ou decodificar uma mensagem.
+ */
+public class VigenereCodifierStrategy {
+    private static final int TAMANHO_ALFABETO = 26;
 
+    /**
+     * Codifica uma mensagem utilizando o cifrador Vignére.
+     *
+     * @param plaintext A mensagem em texto claro a ser codificada.
+     * @param key A chave utilizada para a codificação.
+     * @return A mensagem codificada.
+     */
     public static String encode(String plaintext, String key) {
         StringBuilder ciphertext = new StringBuilder();
         plaintext = plaintext.toUpperCase();
@@ -24,6 +35,13 @@ public class VignéreCodifierStrategy {
         return ciphertext.toString();
     }
 
+    /**
+     * Decodifica uma mensagem codificada utilizando o cifrador Vignére.
+     *
+     * @param ciphertext A mensagem codificada a ser decodificada.
+     * @param key A chave utilizada para a decodificação.
+     * @return A mensagem decodificada.
+     */
     public static String decode(String ciphertext, String key) {
         StringBuilder plaintext = new StringBuilder();
         ciphertext = ciphertext.toUpperCase();
@@ -48,15 +66,14 @@ public class VignéreCodifierStrategy {
     private static char encodeChar(char plainChar, char keyChar) {
         int plainIndex = plainChar - 'A';
         int keyIndex = keyChar - 'A';
-        int encodedIndex = (plainIndex + keyIndex) % ALPHABET_SIZE;
+        int encodedIndex = (plainIndex + keyIndex) % TAMANHO_ALFABETO;
         return (char) ('A' + encodedIndex);
     }
 
     private static char decodeChar(char cipherChar, char keyChar) {
         int cipherIndex = cipherChar - 'A';
         int keyIndex = keyChar - 'A';
-        int decodedIndex = (cipherIndex - keyIndex + ALPHABET_SIZE) % ALPHABET_SIZE;
+        int decodedIndex = (cipherIndex - keyIndex + TAMANHO_ALFABETO) % TAMANHO_ALFABETO;
         return (char) ('A' + decodedIndex);
     }
-
 }
