@@ -1,19 +1,23 @@
-import domain.interfaces.IOCT;
 import domain.User;
+import domain.UserCatalog;
+import domain.interfaces.IOCT;
 
 public class OCT implements IOCT {
 
+    private UserCatalog userCatalog;
+
+    public OCT(UserCatalog userCatalog) {
+        this.userCatalog = userCatalog;
+    }
+
     @Override
-    public String getUsersInfo(String name) {
-        User user = getUserByName(name);
+    public User getUsersInfo(String name) {
+        User user = UserCatalog.getUserByName(name);
         if (user != null) {
-            return user.toString();
+            return user;
         } else {
-            return "User not found.";
+            return null;
         }
     }
 
-    private User getUserByName(String name) {
-
-    }
 }

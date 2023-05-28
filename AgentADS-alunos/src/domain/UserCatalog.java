@@ -17,4 +17,12 @@ public class UserCatalog {
         users.add(user);
     }
 
+    public User getUserByName(String name) {
+        for (User user : users) {
+            if (user.getName().equals(name)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
